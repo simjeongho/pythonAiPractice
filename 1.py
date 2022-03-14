@@ -10,3 +10,8 @@ type(level)
 angle  = 24.32;
 type(angle);
 print(type(angle))
+
+
+#군집 데이터
+
+
