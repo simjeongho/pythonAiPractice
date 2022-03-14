@@ -1,4 +1,3 @@
-import tkinter
 from tkinter import *
 def add(x,y):
     result = x+y
@@ -8,9 +7,11 @@ def input_value(val):
 def clear_all(val):
     entry_value.delete(0, "end");
 def get_result():
-    arr = entry_value.get().split("+")
-    #print arr
-    return_value = add(int(arr[0]), int(arr[1]))
+    # arr = entry_value.get().split("+")
+    # #print arr
+    # return_value = add(int(arr[0]), int(arr[1]))
+    # entry_value.delete(0, "end")
+    return_value = eval(entry_value.get()) #eval 함수 중요 
     entry_value.delete(0, "end")
     entry_value.insert(0, return_value)
 
@@ -23,8 +24,8 @@ entry_value.grid(row=0, column=0, columnspan=4)
 entry_value.focus_set() #Sets focus on the input text area
 
 #Generating Button
-Button(main, text = "=", width = 30, command = lambda:get_result()).grid(row=5, column= 0, columnspan = 3)
-Button(main, text="AC", width=10, command = lambda:clear_all()).grid(row=4, column=0)
+Button(main, text = "=", width = 30, command = lambda:get_result()).grid(row=5, column= 0, columnspan = 3)#lambda 는 무기명의 함수 command에서 함수를 부를 수는 있지만 매개변수를 집어넣을 수는 없다. 
+Button(main, text="AC", width=10, command = lambda:clear_all()).grid(row=4, column=0) # 따라서 lambda를 사용한다. 
 Button(main, text="+", width=10, command= lambda:input_value('+')).grid(row=4, column=2)
 Button(main, text="7", width=10, command=lambda:input_value(7)).grid(row=1, column=0)
 Button(main, text="8", width=10, command=lambda:input_value(8)).grid(row=1, column=1)
