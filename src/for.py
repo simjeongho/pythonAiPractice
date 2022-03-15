@@ -1,3 +1,4 @@
+
 num = int(input("Multiplication table of : "))
 for i in range(1,10): print(num, 'x', i, '=', num * i) # for 문 for ~ in~ range
 
